@@ -1,0 +1,4 @@
+Main mechanic:
+	Fish out of water game
+Genre:
+	Single player adventure - MMORPG
