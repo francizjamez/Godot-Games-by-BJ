@@ -121,6 +121,12 @@ polygon = PoolVector2Array( -14.9745, -0.774628, -13.9013, 2.01567, -10.6817, 4.
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
 
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 1 )
+hframes = 17
+frame = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.5708
 shape = SubResource( 1 )
@@ -140,9 +146,3 @@ parameters/Move/blend_position = Vector2( 0, 0 )
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource( 19 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -8 )
-texture = ExtResource( 1 )
-hframes = 17
-frame = 1
