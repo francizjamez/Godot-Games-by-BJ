@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World/Objects/Barrel.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.33581
+height = 7.30822
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( -4.5932, 8.55577, 4.87354, 8.55577, 7.03262, 5.89845, 8.19519, 2.24462, 8.02911, -3.23612, 6.03612, -6.22561, 4.37529, -7.22211, -3.76278, -7.3882, -6.58619, -5.22912, -7.91486, -3.4022, -7.91486, 2.74287, -6.58619, 5.73236 )
+
+[node name="Barrel" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 2.51824 )
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -2.20063, -2.20063 )
+texture = ExtResource( 1 )

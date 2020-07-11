@@ -1,14 +1,13 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Units/Slime/Slime.png" type="Texture" id=1]
 [ext_resource path="res://Player/Player.gd" type="Script" id=2]
 
-[sub_resource type="CapsuleShape2D" id=29]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 8.0
 height = 16.0
 
-[sub_resource type="Animation" id=1]
-resource_name = "Idle"
+[sub_resource type="Animation" id=2]
 length = 0.8
 loop = true
 step = 0.4
@@ -25,8 +24,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "Move"
+[sub_resource type="Animation" id=3]
 length = 0.7
 loop = true
 tracks/0/type = "value"
@@ -42,7 +40,7 @@ tracks/0/keys = {
 "values": [ 2, 3, 4, 5, 6, 5, 4 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=4]
 resource_name = "Move-R"
 length = 0.7
 loop = true
@@ -59,86 +57,92 @@ tracks/0/keys = {
 "values": [ 5, 6, 5, 4, 2, 3, 4 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=18]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=19]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=20]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=21]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=22]
-blend_point_0/node = SubResource( 18 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=9]
+blend_point_0/node = SubResource( 5 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 19 )
+blend_point_1/node = SubResource( 6 )
 blend_point_1/pos = Vector2( 0, 1 )
-blend_point_2/node = SubResource( 20 )
+blend_point_2/node = SubResource( 7 )
 blend_point_2/pos = Vector2( 1, 0 )
-blend_point_3/node = SubResource( 21 )
+blend_point_3/node = SubResource( 8 )
 blend_point_3/pos = Vector2( 0, -1 )
 
-[sub_resource type="AnimationNodeAnimation" id=23]
+[sub_resource type="AnimationNodeAnimation" id=10]
 animation = "Move"
 
-[sub_resource type="AnimationNodeAnimation" id=24]
+[sub_resource type="AnimationNodeAnimation" id=11]
 animation = "Move-R"
 
-[sub_resource type="AnimationNodeAnimation" id=25]
+[sub_resource type="AnimationNodeAnimation" id=12]
 animation = "Move-R"
 
-[sub_resource type="AnimationNodeAnimation" id=26]
+[sub_resource type="AnimationNodeAnimation" id=13]
 animation = "Move"
 
-[sub_resource type="AnimationNodeBlendSpace2D" id=12]
-blend_point_0/node = SubResource( 23 )
+[sub_resource type="AnimationNodeBlendSpace2D" id=14]
+blend_point_0/node = SubResource( 10 )
 blend_point_0/pos = Vector2( -1, 0 )
-blend_point_1/node = SubResource( 24 )
+blend_point_1/node = SubResource( 11 )
 blend_point_1/pos = Vector2( 1, 0 )
-blend_point_2/node = SubResource( 25 )
+blend_point_2/node = SubResource( 12 )
 blend_point_2/pos = Vector2( 0, -1 )
-blend_point_3/node = SubResource( 26 )
+blend_point_3/node = SubResource( 13 )
 blend_point_3/pos = Vector2( 0, 1 )
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
-[sub_resource type="AnimationNodeStateMachine" id=15]
-states/Idle/node = SubResource( 22 )
+[sub_resource type="AnimationNodeStateMachine" id=17]
+states/Idle/node = SubResource( 9 )
 states/Idle/position = Vector2( 425, 134 )
-states/Move/node = SubResource( 12 )
+states/Move/node = SubResource( 14 )
 states/Move/position = Vector2( 617, 134 )
-transitions = [ "Idle", "Move", SubResource( 27 ), "Move", "Idle", SubResource( 28 ) ]
+transitions = [ "Idle", "Move", SubResource( 15 ), "Move", "Idle", SubResource( 16 ) ]
 start_node = "Idle"
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=18]
+
+[sub_resource type="OccluderPolygon2D" id=19]
+polygon = PoolVector2Array( -14.9745, -0.774628, -13.9013, 2.01567, -10.6817, 4.16205, -5.1011, 5.44988, 1.5527, 5.87916, 5.41618, 4.80597, 12.07, 1.37175, 12.9285, -3.56493, 9.49431, -6.99914, 2.41125, -7.64305, -4.24255, -8.71625, -9.17922, -7.21378, -13.6866, -3.56493 )
 
 [node name="Player" type="KinematicBody2D"]
 script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 2 )
+anims/Move = SubResource( 3 )
+anims/Move-R = SubResource( 4 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 17 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 18 )
+parameters/Idle/blend_position = Vector2( 0, 0 )
+parameters/Move/blend_position = Vector2( 0, 0 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 19 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0, -8 )
 texture = ExtResource( 1 )
 hframes = 17
 frame = 1
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-rotation = -1.5708
-shape = SubResource( 29 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 1 )
-anims/Move = SubResource( 2 )
-anims/Move-R = SubResource( 17 )
-
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 15 )
-anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 16 )
-parameters/Idle/blend_position = Vector2( 0, 0 )
-parameters/Move/blend_position = Vector2( 0, 0 )
