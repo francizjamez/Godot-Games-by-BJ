@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Barrel_nm.png-2e0a4789d5b9eddff92d37f74e821266.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Data/Sprites/World/Objects/Normal Maps/Barrel_nm.png"
+dest_files=[ "res://.import/Barrel_nm.png-2e0a4789d5b9eddff92d37f74e821266.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
