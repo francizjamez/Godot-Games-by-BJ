@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://Units/Instances/UnitStats.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+unit_name = "Villager"
+description = "A person who strayed to far from his village"
+max_health = 5
+respawn_time = 3
+damage = 1
+attack_speed = 4.0
+crit_chance = 10
+crit_damage = 10
+accuracy = 80.0
+speed = 120
+acceleration = 0.1
+friction = 0.1
