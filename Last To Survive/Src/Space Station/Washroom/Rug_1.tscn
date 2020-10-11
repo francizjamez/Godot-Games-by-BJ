@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Space Station/Misc/Textures/Rug_1.png" type="Texture" id=1]
+
+
+[node name="Rug_1" type="Sprite"]
+position = Vector2( 323, 103 )
+texture = ExtResource( 1 )

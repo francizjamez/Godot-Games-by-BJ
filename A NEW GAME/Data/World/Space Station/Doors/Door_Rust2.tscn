@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Data/World/Space Station/Doors/Scripts/Door_Rust.gd" type="Script" id=1]
+[ext_resource path="res://Data/World/Space Station/Doors/Textures/Door_Rust_2.png" type="Texture" id=2]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 17, 6 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 73 )
+
+[node name="Door_Rust2_" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 39 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="CollisionShape2D"]
+position = Vector2( 0, -25 )
+texture = ExtResource( 2 )
+
+[node name="Tween_move" type="Tween" parent="CollisionShape2D"]
+playback_process_mode = 0
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 0, 25 )
+collision_layer = 2
+collision_mask = 2147483650
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -35 )
+shape = SubResource( 2 )

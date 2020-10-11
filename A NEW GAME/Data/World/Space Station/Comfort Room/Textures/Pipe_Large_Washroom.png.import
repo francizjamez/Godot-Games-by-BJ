@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Pipe_Large_Washroom.png-d802dea63277c64a159fccc05a271855.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Data/World/Space Station/Comfort Room/Textures/Pipe_Large_Washroom.png"
+dest_files=[ "res://.import/Pipe_Large_Washroom.png-d802dea63277c64a159fccc05a271855.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

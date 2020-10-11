@@ -1,0 +1,557 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://Data/World/Dividers/Divider.png" type="Texture" id=1]
+[ext_resource path="res://Data/World/Space Station/Walls/Wall_Set_1.png" type="Texture" id=2]
+[ext_resource path="res://Data/Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Data/World/Space Station/Doors/Door_Frame_v1_.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Data/World/Space Station/Doors/Door_Vio.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Data/World/Space Station/Floor/Floor_Set_1.png" type="Texture" id=6]
+[ext_resource path="res://Data/World/Space Station/Doors/Door_Rust.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Data/World/Space Station/Doors/Door_Rust2.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Cubicle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Toilet_1.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Toilet_2.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Toilet_4.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Toilet_3.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Door_Cubicle.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Textures/Pipe_Large_Washroom_p2.png" type="Texture" id=15]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Cr_Sinks.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Textures/Pipe_Large_Washroom_p1.png" type="Texture" id=17]
+[ext_resource path="res://Data/World/Designs/Textures/Rug_1.png" type="Texture" id=18]
+[ext_resource path="res://Data/World/Designs/Puddles/puddle_4.png" type="Texture" id=19]
+[ext_resource path="res://Data/World/Designs/Puddles/Puddle_1.png" type="Texture" id=20]
+[ext_resource path="res://Data/World/Designs/Puddles/puddle_5.png" type="Texture" id=21]
+[ext_resource path="res://Data/World/Designs/Puddles/Puddle_2.png" type="Texture" id=22]
+[ext_resource path="res://Data/World/Designs/Puddles/Puddle_3.png" type="Texture" id=23]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Textures/Wr_Pipe_Small_2.png" type="Texture" id=24]
+[ext_resource path="res://Data/World/Space Station/Comfort Room/Textures/Wr_Pipe_Small_1.png" type="Texture" id=25]
+[ext_resource path="res://Data/World/Space Station/Guard Room/Bed.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Data/World/Space Station/Walls/Normal Maps/Wall_Set_1_n inverted.png" type="Texture" id=27]
+[ext_resource path="res://Data/World/Space Station/Floor/Normal Maps/Floor_Set_1_n.png" type="Texture" id=28]
+[ext_resource path="res://Data/World/Space Station/Misc/Locker.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Data/World/Space Station/Guard Room/Table.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Data/World/Space Station/Misc/Vending_Machine.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Data/World/Space Station/Misc/Vending_Machine2.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Data/World/Lights/Flourecent_Tube.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Data/Player/Scripts/FPS.gd" type="Script" id=34]
+[ext_resource path="res://Data/World/Designs/Dirt/Dirt_2.png" type="Texture" id=35]
+[ext_resource path="res://Data/World/Designs/Dirt/Dirt_3.png" type="Texture" id=36]
+[ext_resource path="res://Data/World/Designs/Ads/Ad_1.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Data/World/Designs/Dirt/Dirt_1.png" type="Texture" id=38]
+[ext_resource path="res://Data/World/Designs/Dirt/Dirt_Small_1.png" type="Texture" id=39]
+[ext_resource path="res://Data/World/Designs/Dirt/Dirt_Small_5.png" type="Texture" id=40]
+[ext_resource path="res://Data/World/Designs/Dirt/Dirt_Small_3.png" type="Texture" id=41]
+[ext_resource path="res://Data/World/Designs/Misc/ExhaustFan.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Data/World/Space Station/Misc/Textures/Notes_1.png" type="Texture" id=43]
+[ext_resource path="res://Data/World/Space Station/Misc/Textures/Poster_Spaceman.png" type="Texture" id=44]
+[ext_resource path="res://Data/World/Lights/Light_Circle.tscn" type="PackedScene" id=45]
+[ext_resource path="res://Data/World/Lights/Fake_Light.tscn" type="PackedScene" id=46]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+light_mode = 1
+
+[sub_resource type="TileSet" id=2]
+0/name = "Floor_Set_1.png 0"
+0/texture = ExtResource( 6 )
+0/normal_map = ExtResource( 28 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 220, 44 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 44, 44 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 88, 0, 88 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 88, 0, 88 )
+
+[sub_resource type="ConvexPolygonShape2D" id=5]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 88, 0, 88 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 88, 0, 88 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 88, 0, 88 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 88, 0, 88 )
+
+[sub_resource type="TileSet" id=9]
+0/name = "Wall_Set_1.png 0"
+0/texture = ExtResource( 2 )
+0/normal_map = ExtResource( 27 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 176, 528 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 44, 88 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 4 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 5 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 3 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 4 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 7 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 5 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[sub_resource type="OccluderPolygon2D" id=10]
+polygon = PoolVector2Array( 0, 0, 44, 0, 44, 44, 0, 44 )
+
+[sub_resource type="OccluderPolygon2D" id=11]
+polygon = PoolVector2Array( 0, 0, 44, 0, 44, 44, 0, 44 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 44, 44, 0, 44, 0, 21.8153, 44, 21.8153 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 0, 0, 44, 0, 44, 44, 0, 44 )
+
+[sub_resource type="TileSet" id=14]
+0/name = "Divider.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 220, 44 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 44, 44 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [ Vector2( 0, 0 ), SubResource( 10 ), Vector2( 1, 0 ), SubResource( 11 ) ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 12 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 546, 242 )
+z_index = 7
+current = true
+
+[node name="Label" type="Label" parent="Camera2D"]
+material = SubResource( 1 )
+margin_left = -233.0
+margin_top = -129.0
+margin_right = -162.0
+margin_bottom = -115.0
+script = ExtResource( 34 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Space Station" type="Node2D" parent="."]
+
+[node name="Floor" type="TileMap" parent="Space Station"]
+z_index = -10
+tile_set = SubResource( 2 )
+cell_size = Vector2( 44, 44 )
+format = 1
+tile_data = PoolIntArray( -327664, 0, 0, -327663, 0, 0, -262128, 0, 0, -262127, 0, 0, -196608, 0, 0, -196607, 0, 0, -196606, 0, 0, -196605, 0, 0, -196604, 0, 0, -196603, 0, 0, -196602, 0, 0, -196601, 0, 0, -196600, 0, 0, -196599, 0, 0, -196592, 0, 0, -196591, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131056, 0, 0, -131055, 0, 0, -65534, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, 0, 0, 0, 2, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 65538, 0, 0, 65545, 0, 0, 65558, 0, 0, 65559, 0, 0, 131073, 0, 1, 131074, 0, 1, 131075, 0, 1, 131076, 0, 1, 131077, 0, 1, 131078, 0, 1, 131081, 0, 0, 131094, 0, 0, 131095, 0, 0, 196609, 0, 1, 196610, 0, 1, 196611, 0, 1, 196612, 0, 1, 196613, 0, 1, 196614, 0, 1, 196617, 0, 0, 196630, 0, 0, 196631, 0, 0, 262145, 0, 1, 262146, 0, 1, 262152, 0, 2, 262153, 0, 2, 262154, 0, 2, 262155, 0, 2, 262156, 0, 2, 262157, 0, 2, 262158, 0, 2, 262159, 0, 2, 262160, 0, 2, 262161, 0, 2, 262162, 0, 2, 262163, 0, 2, 262165, 0, 0, 262166, 0, 0, 262167, 0, 0, 262168, 0, 0, 262169, 0, 0, 262170, 0, 0, 262171, 0, 0, 262172, 0, 0, 262173, 0, 0, 327681, 0, 1, 327682, 0, 1, 327688, 0, 2, 327689, 0, 2, 327690, 0, 2, 327691, 0, 2, 327692, 0, 2, 327693, 0, 2, 327694, 0, 2, 327695, 0, 2, 327696, 0, 2, 327697, 0, 2, 327698, 0, 2, 327699, 0, 2, 327701, 0, 0, 327702, 0, 0, 327703, 0, 0, 327704, 0, 0, 327705, 0, 0, 327706, 0, 0, 327707, 0, 0, 327708, 0, 0, 327709, 0, 0, 393217, 0, 1, 393218, 0, 1, 393224, 0, 2, 393225, 0, 2, 393226, 0, 2, 393227, 0, 2, 393228, 0, 2, 393229, 0, 2, 393230, 0, 2, 393231, 0, 2, 393232, 0, 2, 393233, 0, 2, 393234, 0, 2, 393235, 0, 2, 393237, 0, 0, 393238, 0, 0, 393239, 0, 0, 393240, 0, 0, 393241, 0, 0, 393242, 0, 0, 393243, 0, 0, 393244, 0, 0, 393245, 0, 0, 458753, 0, 1, 458754, 0, 1, 458755, 0, 1, 458756, 0, 1, 458757, 0, 1, 458758, 0, 1, 458760, 0, 2, 458761, 0, 2, 458762, 0, 2, 458773, 0, 0, 458774, 0, 0, 458775, 0, 0, 458776, 0, 0, 458777, 0, 0, 458778, 0, 0, 458779, 0, 0, 458780, 0, 0, 458781, 0, 0, 524289, 0, 1, 524290, 0, 1, 524291, 0, 1, 524292, 0, 1, 524293, 0, 1, 524294, 0, 1, 524296, 0, 2, 524297, 0, 2, 524298, 0, 2, 524309, 0, 0, 524310, 0, 0, 524311, 0, 0, 524312, 0, 0, 524313, 0, 0, 524314, 0, 0, 524315, 0, 0, 524316, 0, 0, 524317, 0, 0, 589826, 0, 1, 589833, 0, 2, 589845, 0, 0, 589846, 0, 0, 589847, 0, 0, 589848, 0, 0, 589849, 0, 0, 589850, 0, 0, 589851, 0, 0, 589852, 0, 0, 589853, 0, 0, 655362, 0, 1, 655369, 0, 2, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 720898, 0, 1, 720905, 0, 2, 720908, 0, 0, 720909, 0, 0, 720910, 0, 0, 720911, 0, 0, 720912, 0, 0, 720913, 0, 0, 720914, 0, 0, 720915, 0, 0, 720916, 0, 0, 720917, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 720921, 0, 0, 720922, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 786432, 0, 0, 786433, 0, 0, 786434, 0, 0, 786435, 0, 0, 786436, 0, 0, 786437, 0, 0, 786438, 0, 0, 786439, 0, 0, 786440, 0, 0, 786441, 0, 0, 786442, 0, 0, 786443, 0, 0, 786444, 0, 0, 786445, 0, 0, 851968, 0, 0, 851969, 0, 0, 851970, 0, 0, 851971, 0, 0, 851972, 0, 0, 851973, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851977, 0, 0, 851978, 0, 0, 851979, 0, 0, 851980, 0, 0, 851981, 0, 0 )
+
+[node name="Walls" type="TileMap" parent="Space Station"]
+tile_set = SubResource( 9 )
+cell_size = Vector2( 44, 44 )
+cell_tile_origin = 2
+cell_y_sort = true
+format = 1
+tile_data = PoolIntArray( -196590, 0, 0, -196589, 0, 0, -196588, 0, 2, -196587, 0, 3, -196586, 0, 0, -196585, 0, 0, 1, 0, 65536, 2, 0, 65537, 3, 0, 65536, 4, 0, 65536, 5, 0, 65536, 6, 0, 65536, 131080, 0, 131072, 131081, 0, 131073, 131082, 0, 131072, 131083, 0, 131072, 131084, 0, 131072, 131085, 0, 131072, 131086, 0, 131072, 131087, 0, 131072, 131088, 0, 131072, 131089, 0, 131072, 131090, 0, 131072, 131091, 0, 131072, 131093, 0, 196608, 131096, 0, 196608, 131097, 0, 196608, 131098, 0, 196608, 131099, 0, 196608, 131100, 0, 196608, 131101, 0, 196608, 327680, 0, 65536, 327683, 0, 65536, 327684, 0, 65536, 327685, 0, 65536, 327686, 0, 65536, 524300, 0, 0, 524301, 0, 0, 524302, 0, 0, 524303, 0, 0, 524304, 0, 0, 524305, 0, 0, 524306, 0, 0, 524307, 0, 0, 524308, 0, 0, 655360, 0, 0, 655361, 0, 0, 655362, 0, 1, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 1, 655370, 0, 0, 655371, 0, 0 )
+
+[node name="Player" parent="Space Station/Walls" instance=ExtResource( 3 )]
+position = Vector2( 546, 242 )
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Space Station/Walls/Player"]
+remote_path = NodePath("../../../../Camera2D")
+
+[node name="Comfort Room" type="YSort" parent="Space Station/Walls"]
+position = Vector2( -2, 0 )
+
+[node name="Designs" type="YSort" parent="Space Station/Walls/Comfort Room"]
+
+[node name="Floor" type="YSort" parent="Space Station/Walls/Comfort Room/Designs"]
+
+[node name="Rug_1" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Floor"]
+position = Vector2( 419, 200 )
+z_index = -1
+texture = ExtResource( 18 )
+
+[node name="Puddle_1" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Floor"]
+position = Vector2( 434, 206 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="Puddle_2" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Floor"]
+position = Vector2( 499, 194 )
+z_index = -1
+texture = ExtResource( 22 )
+
+[node name="Puddle_3" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Floor"]
+position = Vector2( 783, 193 )
+z_index = -1
+texture = ExtResource( 23 )
+
+[node name="puddle_5" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Floor"]
+position = Vector2( 455, 178 )
+z_index = -1
+texture = ExtResource( 21 )
+
+[node name="puddle_4" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Floor"]
+position = Vector2( 465, 364 )
+z_index = -1
+texture = ExtResource( 19 )
+
+[node name="Walls" type="YSort" parent="Space Station/Walls/Comfort Room/Designs"]
+
+[node name="Dirt_2" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Walls"]
+modulate = Color( 0.458824, 0.4, 0.301961, 0.576471 )
+position = Vector2( 838, 139 )
+texture = ExtResource( 35 )
+offset = Vector2( 0, -30 )
+
+[node name="Dirt_Small_1" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs/Walls"]
+modulate = Color( 0.648438, 0.590179, 0.491394, 1 )
+position = Vector2( 471, 134 )
+texture = ExtResource( 39 )
+offset = Vector2( 0, -35 )
+
+[node name="Pipe_Large_Washroom_p1" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs"]
+position = Vector2( 361, 244 )
+z_index = 6
+texture = ExtResource( 17 )
+
+[node name="Pipe_Large_Washroom_p2" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs"]
+position = Vector2( 623, 110 )
+z_index = 7
+texture = ExtResource( 15 )
+
+[node name="Wr_Pipe_Small_1" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs"]
+position = Vector2( 526, 139 )
+texture = ExtResource( 25 )
+offset = Vector2( 0, -10 )
+
+[node name="Wr_Pipe_Small_2" type="Sprite" parent="Space Station/Walls/Comfort Room/Designs"]
+position = Vector2( 708, 136 )
+texture = ExtResource( 24 )
+
+[node name="Cubicles" type="YSort" parent="Space Station/Walls/Comfort Room"]
+position = Vector2( 0, 1 )
+
+[node name="Cubicle" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 9 )]
+position = Vector2( 848, 216 )
+
+[node name="Cubicle2" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 9 )]
+position = Vector2( 785, 216 )
+
+[node name="Cubicle3" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 9 )]
+position = Vector2( 722, 216 )
+
+[node name="Cubicle4" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 9 )]
+position = Vector2( 659, 216 )
+
+[node name="Toilet_v1_" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 10 )]
+position = Vector2( 849, 152 )
+
+[node name="Toilet_v2_" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 11 )]
+position = Vector2( 723, 152 )
+
+[node name="Toilet_v3_" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 13 )]
+position = Vector2( 785, 152 )
+
+[node name="Toilet_v4_" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 12 )]
+position = Vector2( 661, 152 )
+
+[node name="Door_Cubicle" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 14 )]
+position = Vector2( 848, 209 )
+
+[node name="Door_Cubicle2" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 14 )]
+position = Vector2( 785, 209 )
+
+[node name="Door_Cubicle3" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 14 )]
+position = Vector2( 722, 209 )
+
+[node name="Door_Cubicle4" parent="Space Station/Walls/Comfort Room/Cubicles" instance=ExtResource( 14 )]
+position = Vector2( 659, 209 )
+
+[node name="Door_Frame_v1_" parent="Space Station/Walls/Comfort Room" instance=ExtResource( 4 )]
+position = Vector2( 420, 132 )
+
+[node name="Door_Rust2_" parent="Space Station/Walls/Comfort Room" instance=ExtResource( 8 )]
+position = Vector2( 420, 131 )
+
+[node name="Wr_Sinks" parent="Space Station/Walls/Comfort Room" instance=ExtResource( 16 )]
+position = Vector2( 535, 150 )
+
+[node name="YSort" type="YSort" parent="Space Station/Walls/Comfort Room"]
+
+[node name="Light_Circle" parent="Space Station/Walls/Comfort Room" instance=ExtResource( 45 )]
+position = Vector2( 625, 229 )
+scale = Vector2( 1.96094, 1 )
+color = Color( 1, 0.980392, 0.709804, 1 )
+
+[node name="Hallways" type="YSort" parent="Space Station/Walls"]
+position = Vector2( 2, -4 )
+
+[node name="Lights" type="YSort" parent="Space Station/Walls/Hallways"]
+position = Vector2( 2, 1 )
+
+[node name="Light_Circle2" parent="Space Station/Walls/Hallways/Lights" instance=ExtResource( 45 )]
+position = Vector2( 746, 454 )
+scale = Vector2( 1.53516, 1 )
+color = Color( 0.996078, 1, 0.631373, 1 )
+
+[node name="Designs" type="YSort" parent="Space Station/Walls/Hallways"]
+position = Vector2( 2, 1 )
+
+[node name="Floor" type="YSort" parent="Space Station/Walls/Hallways/Designs"]
+
+[node name="Dirt_2" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Floor"]
+modulate = Color( 0.239216, 0.239216, 0.239216, 1 )
+position = Vector2( 339, 552 )
+z_index = -1
+texture = ExtResource( 35 )
+
+[node name="Dirt_3" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Floor"]
+modulate = Color( 0.0784314, 0.0431373, 0.0823529, 1 )
+position = Vector2( 120, 588 )
+z_index = -1
+texture = ExtResource( 36 )
+
+[node name="Wall" type="YSort" parent="Space Station/Walls/Hallways/Designs"]
+
+[node name="Small" type="YSort" parent="Space Station/Walls/Hallways/Designs/Wall"]
+
+[node name="Dirt_Small_1" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall/Small"]
+modulate = Color( 0.509804, 0.498039, 0.545098, 1 )
+position = Vector2( 52, 498 )
+texture = ExtResource( 39 )
+offset = Vector2( 0, -30 )
+
+[node name="Dirt_Small_5" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall/Small"]
+modulate = Color( 0.43824, 0.424164, 0.480469, 1 )
+position = Vector2( 63, 497 )
+texture = ExtResource( 40 )
+
+[node name="Dirt_Small_6" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall/Small"]
+modulate = Color( 0.43824, 0.424164, 0.480469, 1 )
+position = Vector2( 61, 489 )
+texture = ExtResource( 40 )
+
+[node name="Dirt_Small_7" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall/Small"]
+modulate = Color( 0.43824, 0.424164, 0.480469, 1 )
+position = Vector2( 52, 489 )
+texture = ExtResource( 40 )
+
+[node name="Dirt_Small_3" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall/Small"]
+modulate = Color( 0.509804, 0.498039, 0.545098, 1 )
+position = Vector2( 611, 403 )
+rotation = -1.5708
+texture = ExtResource( 41 )
+offset = Vector2( 30, 0 )
+
+[node name="Dirt_1" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall"]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 335, 488 )
+texture = ExtResource( 38 )
+offset = Vector2( 0, -1 )
+
+[node name="Dirt_2" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall"]
+modulate = Color( 0.0980392, 0.0666667, 0.105882, 1 )
+position = Vector2( 819, 402 )
+texture = ExtResource( 35 )
+offset = Vector2( 0, 20 )
+flip_v = true
+
+[node name="Dirt_3" type="Sprite" parent="Space Station/Walls/Hallways/Designs/Wall"]
+modulate = Color( 0.345098, 0.345098, 0.345098, 1 )
+position = Vector2( 657, 401 )
+texture = ExtResource( 36 )
+offset = Vector2( 0, -15 )
+flip_v = true
+
+[node name="Ad_1" parent="Space Station/Walls/Hallways/Designs" instance=ExtResource( 37 )]
+position = Vector2( 478, 498 )
+
+[node name="Fake_Light" parent="Space Station/Walls/Hallways/Designs/Ad_1" instance=ExtResource( 46 )]
+modulate = Color( 1, 1, 1, 0.415686 )
+self_modulate = Color( 1, 1, 1, 0.435294 )
+position = Vector2( 1.52588e-05, -13 )
+scale = Vector2( 1.57812, 1.6875 )
+
+[node name="ExhaustFan_" parent="Space Station/Walls/Hallways/Designs" instance=ExtResource( 42 )]
+position = Vector2( 541, 403 )
+frame = 3
+
+[node name="ExhaustFan_2" parent="Space Station/Walls/Hallways/Designs" instance=ExtResource( 42 )]
+position = Vector2( 566, 403 )
+frame = 3
+
+[node name="Doors" type="YSort" parent="Space Station/Walls/Hallways"]
+
+[node name="Door_Frame_v1_" parent="Space Station/Walls/Hallways/Doors" instance=ExtResource( 4 )]
+position = Vector2( 416, 488 )
+
+[node name="Door_Rust" parent="Space Station/Walls/Hallways/Doors" instance=ExtResource( 7 )]
+position = Vector2( 416, 487 )
+
+[node name="Door_Frame_v1_2" parent="Space Station/Walls/Hallways/Doors" instance=ExtResource( 4 )]
+position = Vector2( 108, 488 )
+
+[node name="Door_Vio_" parent="Space Station/Walls/Hallways/Doors" instance=ExtResource( 5 )]
+position = Vector2( 108, 487 )
+
+[node name="Vending_Machine" parent="Space Station/Walls/Hallways" instance=ExtResource( 31 )]
+position = Vector2( 190, 513 )
+
+[node name="Fake_Light" parent="Space Station/Walls/Hallways/Vending_Machine" instance=ExtResource( 46 )]
+modulate = Color( 0.839216, 0, 1, 0.584314 )
+self_modulate = Color( 0.847059, 0, 1, 0.623529 )
+position = Vector2( 2, 2 )
+
+[node name="Vending_Machine2_" parent="Space Station/Walls/Hallways" instance=ExtResource( 32 )]
+position = Vector2( 238, 513 )
+
+[node name="Fake_Light2" parent="Space Station/Walls/Hallways/Vending_Machine2_" instance=ExtResource( 46 )]
+position = Vector2( -1, 2 )
+
+[node name="Guard Room" type="YSort" parent="Space Station/Walls"]
+
+[node name="Doors" type="YSort" parent="Space Station/Walls/Guard Room"]
+
+[node name="Door_Frame_v1_" parent="Space Station/Walls/Guard Room/Doors" instance=ExtResource( 4 )]
+position = Vector2( 110, 44 )
+
+[node name="Door_Vio_" parent="Space Station/Walls/Guard Room/Doors" instance=ExtResource( 5 )]
+position = Vector2( 110, 43 )
+
+[node name="Lights" type="YSort" parent="Space Station/Walls/Guard Room"]
+scale = Vector2( 0.931264, 0.952213 )
+
+[node name="Flourecent_Tube" parent="Space Station/Walls/Guard Room/Lights" instance=ExtResource( 33 )]
+position = Vector2( 249.124, 295.102 )
+
+[node name="Flourecent_Tube2" parent="Space Station/Walls/Guard Room/Lights" instance=ExtResource( 33 )]
+position = Vector2( 257.714, 63.0111 )
+
+[node name="Walls" type="YSort" parent="Space Station/Walls/Guard Room"]
+
+[node name="Notes_1" type="Sprite" parent="Space Station/Walls/Guard Room/Walls"]
+position = Vector2( 245, 272 )
+texture = ExtResource( 43 )
+offset = Vector2( 0, -10 )
+
+[node name="Poster_Spaceman" type="Sprite" parent="Space Station/Walls/Guard Room/Walls"]
+position = Vector2( 226, 268 )
+texture = ExtResource( 44 )
+offset = Vector2( 0, -10 )
+
+[node name="ExhaustFan_" parent="Space Station/Walls/Guard Room/Walls" instance=ExtResource( 42 )]
+position = Vector2( 154, 50 )
+frame = 1
+
+[node name="Table" parent="Space Station/Walls/Guard Room" instance=ExtResource( 30 )]
+position = Vector2( 234, 277 )
+
+[node name="Bed" parent="Space Station/Walls/Guard Room" instance=ExtResource( 26 )]
+position = Vector2( 287, 278 )
+
+[node name="Locker" parent="Space Station/Walls/Guard Room" instance=ExtResource( 29 )]
+position = Vector2( 191, 286 )
+
+[node name="Table2" parent="Space Station/Walls/Guard Room" instance=ExtResource( 30 )]
+position = Vector2( 241, 58 )
+
+[node name="Bed2" parent="Space Station/Walls/Guard Room" instance=ExtResource( 26 )]
+position = Vector2( 289, 58 )
+
+[node name="Locker2" parent="Space Station/Walls/Guard Room" instance=ExtResource( 29 )]
+position = Vector2( 196, 65 )
+
+[node name="Dividers" type="TileMap" parent="Space Station"]
+z_index = 5
+tile_set = SubResource( 14 )
+cell_size = Vector2( 44, 44 )
+format = 1
+tile_data = PoolIntArray( -327662, 0, 1, -262126, 0, 1, -262125, 0, 0, -262124, 0, 3, -262123, 0, 4, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -196584, 0, 1, -131048, 0, 1, -65536, 0, 0, -65535, 0, 0, -65534, 0, 2, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65512, 0, 1, 0, 0, 1, 7, 0, 1, 24, 0, 1, 65536, 0, 1, 65543, 0, 0, 65544, 0, 0, 65545, 0, 2, 65546, 0, 0, 65547, 0, 0, 65548, 0, 0, 65549, 0, 0, 65550, 0, 0, 65551, 0, 0, 65552, 0, 0, 65553, 0, 0, 65554, 0, 0, 65555, 0, 0, 65556, 0, 0, 65557, 0, 0, 65560, 0, 1, 65561, 0, 1, 65562, 0, 1, 65563, 0, 1, 65564, 0, 1, 65565, 0, 1, 65566, 0, 1, 131072, 0, 1, 131079, 0, 1, 131092, 0, 1, 131102, 0, 1, 196608, 0, 1, 196615, 0, 1, 196628, 0, 1, 196638, 0, 1, 262144, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 1, 262164, 0, 1, 262174, 0, 1, 327680, 0, 1, 327687, 0, 1, 327700, 0, 1, 327710, 0, 1, 393216, 0, 1, 393223, 0, 1, 393236, 0, 1, 393246, 0, 1, 458752, 0, 1, 458759, 0, 1, 458763, 0, 0, 458764, 0, 0, 458765, 0, 0, 458766, 0, 0, 458767, 0, 0, 458768, 0, 0, 458769, 0, 0, 458770, 0, 0, 458771, 0, 0, 458772, 0, 1, 458782, 0, 1, 524288, 0, 1, 524295, 0, 1, 524299, 0, 1, 524318, 0, 1, 589824, 0, 1, 589825, 0, 0, 589826, 0, 2, 589827, 0, 0, 589828, 0, 0, 589829, 0, 0, 589830, 0, 0, 589831, 0, 1, 589832, 0, 0, 589833, 0, 2, 589834, 0, 0, 589835, 0, 1, 589854, 0, 1, 655390, 0, 1, 720926, 0, 1, 786446, 0, 0, 786447, 0, 0, 786448, 0, 0, 786449, 0, 0, 786450, 0, 0, 786451, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0, 786458, 0, 0, 786459, 0, 0, 786460, 0, 1, 786461, 0, 1, 786462, 0, 1, 851982, 0, 1, 917504, 0, 0, 917505, 0, 0, 917506, 0, 0, 917507, 0, 0, 917508, 0, 0, 917509, 0, 0, 917510, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 1 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Space Station"]
+position = Vector2( 1, 0 )
+color = Color( 0.309804, 0.32549, 0.466667, 1 )

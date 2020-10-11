@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Src/Space Station/Misc/Doors/Textures/Door_Rust_1.png" type="Texture" id=1]
+[ext_resource path="res://Src/Space Station/Misc/Doors/Door_Tween.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 16, 10 )
+
+[sub_resource type="Animation" id=6]
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 14 ), Vector2( 5, 14 ), Vector2( 10, 14 ), Vector2( 15, 14 ), Vector2( 20, 14 ), Vector2( 25, 14 ), Vector2( 30, 14 ), Vector2( 35, 14 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 13 )
+
+[node name="Door_Rust_1" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, 14 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Tween_move" type="Tween" parent="Sprite"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 32 )
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Open = SubResource( 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Door_Signal" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 55 )
+shape = SubResource( 4 )
+
+[node name="Door_Signal2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -75 )
+shape = SubResource( 4 )

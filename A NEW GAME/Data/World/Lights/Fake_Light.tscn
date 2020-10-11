@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Test_Light.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+light_mode = 1
+
+[node name="Fake_Light" type="Sprite"]
+modulate = Color( 0, 0.137255, 1, 0.756863 )
+self_modulate = Color( 0.00784314, 0, 0.768627, 0.623529 )
+material = SubResource( 1 )
+position = Vector2( -0.999998, 1.99999 )
+scale = Vector2( 1.02344, 0.945313 )
+z_index = 7
+texture = ExtResource( 1 )

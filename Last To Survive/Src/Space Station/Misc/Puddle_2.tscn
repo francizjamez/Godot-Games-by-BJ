@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Src/Space Station/Misc/Textures/Puddle_2.png" type="Texture" id=1]
+
+[node name="Puddle_2" type="Sprite"]
+texture = ExtResource( 1 )
